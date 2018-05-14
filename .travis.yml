@@ -19,13 +19,14 @@ perl:
   - '5.10'
   - '5.8'
 env:
-  - RT_VERSION=4.0
-  - RT_VERSION=4.2
-  - RT_VERSION=4.4
-  - global:
-      - AUTHOR_TESTING=1
-      - AUTOMATED_TESTING=1
-      - RELEASE_TESTING=0
+  global:
+    - AUTHOR_TESTING=1
+    - AUTOMATED_TESTING=1
+    - RELEASE_TESTING=0
+  matrix:
+    - RT_VERSION=4.0
+    - RT_VERSION=4.2
+    - RT_VERSION=4.4
 matrix:
   allow_failures:
     - perl: 'blead'
