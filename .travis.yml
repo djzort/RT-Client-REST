@@ -34,6 +34,7 @@ matrix:
     - perl: '5.26'
       env: COVERAGE=1
 before_install:
+  - echo $RT_VERSION
   - docker pull netsandbox/request-tracker:$RT_VERSION
   - git config --global user.name "TravisCI"
   - git config --global user.email $HOSTNAME":not-for-mail@travis-ci.org"
